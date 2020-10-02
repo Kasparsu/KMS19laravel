@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
-        $posts = Post::all();
+        $posts = Post::paginate();
         return view('home', compact('posts'));
     }
 }

@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    public function getBodyAttribute($value){
+        return str_replace("\n\n", '<br><br>', $value);
+    }
+
+    public function getExcerptAttribute(){
+        return explode("\n\n", $this->getRawOriginal('body'))[0];
+    }
+
 }
