@@ -14,7 +14,7 @@
                 </tr>
                 <tr>
                     <td><b>Body</b></td>
-                    <td>{{$post->body}}</td>
+                    <td>{!! $post->body !!}</td>
                 </tr>
                 <tr>
                     <td><b>Created At</b></td>
