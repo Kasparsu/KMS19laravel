@@ -14,10 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class,'home']);
-Route::get('/posts', [\App\Http\Controllers\PostController::class,'index']);
-Route::get('/posts/create', [\App\Http\Controllers\PostController::class,'create']);
-Route::post('/posts', [\App\Http\Controllers\PostController::class,'store']);
-Route::get('/posts/{post}', [\App\Http\Controllers\PostController::class,'show']);
-Route::get('/posts/edit/{post}', [\App\Http\Controllers\PostController::class,'edit']);
-Route::post('/posts/{post}', [\App\Http\Controllers\PostController::class,'update']);
-Route::get('/posts/delete/{post}', [\App\Http\Controllers\PostController::class,'destroy']);
+//Route::get('/posts', [\App\Http\Controllers\PostController::class,'index']);
+//Route::get('/posts/create', [\App\Http\Controllers\PostController::class,'create']);
+//Route::post('/posts', [\App\Http\Controllers\PostController::class,'store']);
+//Route::get('/posts/{post}', [\App\Http\Controllers\PostController::class,'show']);
+//Route::get('/posts/edit/{post}', [\App\Http\Controllers\PostController::class,'edit']);
+//Route::post('/posts/{post}', [\App\Http\Controllers\PostController::class,'update']);
+//Route::get('/posts/delete/{post}', [\App\Http\Controllers\PostController::class,'destroy']);
+Route::resource('posts', \App\Http\Controllers\PostController::class);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="58fc70ab-6cca-4c9a-a4f8-d0076caba388" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,6 +133,17 @@
       <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/vendor/laravel/jetstream" />
+      <path value="$PROJECT_DIR$/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/vendor/jenssegers/agent" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hgW7LRHozpi7pIrEhJdLM9819H" />
@@ -170,7 +184,8 @@
       <workItem from="1601357058686" duration="113000" />
       <workItem from="1601631375265" duration="14262000" />
       <workItem from="1601961537846" duration="15000" />
-      <workItem from="1602156336897" duration="11504000" />
+      <workItem from="1602156336897" duration="12193000" />
+      <workItem from="1602234593761" duration="14617000" />
     </task>
     <servers />
   </component>
@@ -194,5 +209,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="110" y="0" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601115909880" />
+    <state x="369" y="-2" width="1177" height="1976" key="search.everywhere.popup" timestamp="1602252209831">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="369" y="-2" width="1177" height="1976" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602252209831" />
   </component>
 </project>

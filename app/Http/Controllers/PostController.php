@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,7 +17,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(10);
+
+        $posts = User::find(3)->posts()->paginate(10);
         return view('posts.index', compact('posts'));
     }
 
@@ -34,11 +38,10 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatePostRequest $request)
     {
-        $post = new Post();
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
+        $validated = $request->validated();
+        $post = new Post($validated);
         $post->save();
         return redirect('/posts');
     }
@@ -72,10 +75,10 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
+        $validated = $request->validated();
+        $post->fill($validated);
         $post->save();
         return redirect('/posts');
     }

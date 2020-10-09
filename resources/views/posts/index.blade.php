@@ -23,8 +23,13 @@
                     <td>{{$post->updated_at}}</td>
                     <td>
                         <a href="/posts/{{$post->id}}" class="btn btn-info">View</a>
-                        <a href="/posts/edit/{{$post->id}}" class="btn btn-warning">Edit</a>
-                        <a href="/posts/delete/{{$post->id}}" class="btn btn-danger">Delete</a>
+                        <a href="/posts/{{$post->id}}/edit" class="btn btn-warning">Edit</a>
+                        <form method="post" action="/posts/{{$post->id}}">
+                            @method('delete')
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </form>
+
                     </td>
                 </tr>
             @endforeach
