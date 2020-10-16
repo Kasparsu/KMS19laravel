@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Models\Image;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -43,8 +45,15 @@ class PostController extends Controller
     {
         $validated = $request->validated();
         $post = new Post($validated);
+        /** @var $uploaded UploadedFile */
+        $uploaded = $validated['image'];
+        $path = $uploaded->storePublicly('/public/uploads');
+        $image = new Image();
+        $image->filename = '/storage/' . str_replace('public/', '', $path);
+        $image->save();
         //$post->user_id = Auth::user()->id;
         $post->user()->associate(Auth::user());
+        $post->image()->associate($image);
         $post->save();
         return redirect('/posts');
     }

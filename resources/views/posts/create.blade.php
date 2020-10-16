@@ -2,7 +2,7 @@
 @section('title', 'Posts List')
 @section('content')
     <div class="container">
-        <form method="POST" action="/posts">
+        <form method="POST" action="/posts" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 @error('title')
@@ -17,6 +17,13 @@
                 @enderror
                 <label for="body">Body:</label>
                 <textarea class="form-control" name="body" id="body"></textarea>
+            </div>
+            <div class="form-group">
+                @error('image')
+                    <div class="alert alert-danger">{{$message}}</div>
+                @enderror
+                <label for="image">Image:</label>
+                <input type="file" class="form-control-file" name="image" id="image">
             </div>
             <input type="submit" class="btn btn-primary" value="Send">
         </form>

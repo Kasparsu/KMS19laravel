@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(PostSeeder::class);
         $this->call(CommentSeeder::class);
+        $this->call(ImageSeeder::class);
 
         $user = new User();
         $user->name = env('DEFAULT_USER_NAME');
