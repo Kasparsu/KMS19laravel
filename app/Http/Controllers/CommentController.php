@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -33,9 +35,16 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Post $post,Request $request)
     {
-        //
+        $validated = $request->validate([
+            'body' => 'required|max:1000'
+        ]);
+        $comment = new Comment($validated);
+        $comment->user()->associate(Auth::user());
+        $comment->post()->associate($post);
+        $comment->save();
+        return redirect(url()->previous());
     }
 
     /**

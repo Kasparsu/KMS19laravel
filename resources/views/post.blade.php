@@ -15,26 +15,35 @@
                </div>
            </div>
            <ul class="list-group">
+               @auth
                <li class="list-group-item">
-                   <form>
+                   <form action="/{{$post->id}}/comment" method="POST">
+                       @csrf
+                       @error('body')
+                        <div class="alert alert-danger">{{$message}}</div>
+                       @enderror
                        <div class="form-group">
                            <label for="comment">Comment:</label>
                            <textarea
                                class="form-control"
-                               name="comment"
+                               name="body"
                                id="comment"
                                cols="5"
                                placeholder="Type your comment here..."></textarea>
                        </div>
+                       <input type="submit" value="Comment" class="btn btn-primary">
                    </form>
                </li>
-               <li class="list-group-item">
-                   <small class="text-muted">
-                       Username - 4 hours ago
-                   </small>
-                   <br>
-                   asdasdasd adsasd asdasddasdasd adasdasd
-               </li>
+               @endauth
+               @foreach($post->comments as $comment)
+                   <li class="list-group-item">
+                       <small class="text-muted">
+                           {{$comment->user->name}} - {{$comment->created_at->diffForHumans()}}
+                       </small>
+                       <br>
+                       {{$comment->body}}
+                   </li>
+               @endforeach
 
            </ul>
        </div>

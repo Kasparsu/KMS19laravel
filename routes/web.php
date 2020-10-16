@@ -24,6 +24,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class,'home']);
 
 Route::middleware(['auth'])->group(function() {
     Route::resource('posts', \App\Http\Controllers\PostController::class);
+    Route::post('/{post}/comment', [\App\Http\Controllers\CommentController::class, 'store']);
 });
 
 Route::get('/{post}', [\App\Http\Controllers\HomeController::class, 'post']);
