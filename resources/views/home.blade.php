@@ -14,10 +14,18 @@
                                 <small class="text-muted">{{$post->user->name}}</small>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        <a
+                                            type="button"
+                                            class="btn btn-sm btn-outline-secondary"
+                                            href="/{{$post->id}}">View</a>
+                                        @auth
+                                            <a
+                                                type="button"
+                                                class="btn btn-sm btn-outline-secondary"
+                                                href="/posts/{{$post->id}}/edit">Edit</a>
+                                        @endauth
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">{{$post->created_at->diffForHumans()}}</small>
                                 </div>
                             </div>
                         </div>

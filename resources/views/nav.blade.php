@@ -9,17 +9,28 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/posts">Posts</a>
-                </li>
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="/posts">Posts</a>
+                    </li>
+                @endauth
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
+                @auth
+                    <li class="nav-item">
+                        <form method="post" action="{{route('logout')}}">
+                            @csrf
+                            <input type="submit" class="btn btn-link nav-link" style="display:inline-block" value="Logout">
+                        </form>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                @endauth
             </ul>
         </div>
     </nav>

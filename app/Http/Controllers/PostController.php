@@ -7,6 +7,7 @@ use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -18,7 +19,7 @@ class PostController extends Controller
     public function index()
     {
 
-        $posts = User::find(3)->posts()->paginate(10);
+        $posts = Auth::user()->posts()->paginate(10);
         return view('posts.index', compact('posts'));
     }
 
@@ -42,6 +43,8 @@ class PostController extends Controller
     {
         $validated = $request->validated();
         $post = new Post($validated);
+        //$post->user_id = Auth::user()->id;
+        $post->user()->associate(Auth::user());
         $post->save();
         return redirect('/posts');
     }

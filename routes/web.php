@@ -21,8 +21,9 @@ Route::get('/', [\App\Http\Controllers\HomeController::class,'home']);
 //Route::get('/posts/edit/{post}', [\App\Http\Controllers\PostController::class,'edit']);
 //Route::post('/posts/{post}', [\App\Http\Controllers\PostController::class,'update']);
 //Route::get('/posts/delete/{post}', [\App\Http\Controllers\PostController::class,'destroy']);
-Route::resource('posts', \App\Http\Controllers\PostController::class);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth'])->group(function() {
+    Route::resource('posts', \App\Http\Controllers\PostController::class);
+});
+
+Route::get('/{post}', [\App\Http\Controllers\HomeController::class, 'post']);
