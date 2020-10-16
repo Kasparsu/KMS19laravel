@@ -156,7 +156,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet.xml" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -186,6 +186,8 @@
       <workItem from="1601961537846" duration="15000" />
       <workItem from="1602156336897" duration="12193000" />
       <workItem from="1602234593761" duration="14617000" />
+      <workItem from="1602566804040" duration="2144000" />
+      <workItem from="1602840559129" duration="1942000" />
     </task>
     <servers />
   </component>
@@ -197,21 +199,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="546" y="262" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601122619735" />
-    <state x="581" y="96" key="FileChooserDialogImpl" timestamp="1601961551045">
+    <state x="581" y="96" key="FileChooserDialogImpl" timestamp="1602583047686">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="581" y="96" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601961551045" />
+    <state x="581" y="96" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602583047686" />
     <state x="696" y="392" key="NewPhpFileDialog" timestamp="1602166320365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="696" y="392" key="NewPhpFileDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602166320365" />
-    <state x="110" y="0" key="SettingsEditor" timestamp="1601115909880">
+    <state x="110" y="0" key="SettingsEditor" timestamp="1602568047303">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="110" y="0" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1601115909880" />
-    <state x="369" y="-2" width="1177" height="1976" key="search.everywhere.popup" timestamp="1602252209831">
+    <state x="110" y="0" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602568047303" />
+    <state x="369" y="-2" width="1177" height="1976" key="search.everywhere.popup" timestamp="1602567677996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="369" y="-2" width="1177" height="1976" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602252209831" />
+    <state x="369" y="-2" width="1177" height="1976" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602567677996" />
   </component>
 </project>
