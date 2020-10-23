@@ -30,7 +30,14 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function image(){
-        return $this->belongsTo(Image::class);
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
+
+    public function getDisplayImageAttribute(){
+        if($this->images->count()){
+            return $this->images[0];
+        }
+        return null;
     }
 }

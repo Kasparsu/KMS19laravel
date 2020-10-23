@@ -16,9 +16,11 @@ class ImageSeeder extends Seeder
     public function run()
     {
         Post::all()->each(function ($post){
-            $image = Image::factory()->create();
-            $post->image_id = $image->id;
-            $post->save();
+            Image::factory()->create(['post_id' => $post->id]);
+
+//            $image = Image::factory()->make();
+//            $image->post_id = $post->id;
+//            $image->save();
         });
     }
 }

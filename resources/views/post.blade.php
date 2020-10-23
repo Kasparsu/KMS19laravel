@@ -4,6 +4,9 @@
     <div class="album py-5 bg-light">
        <div class="container">
            <div class="card">
+               @if($post->displayImage)
+                   <img src="{{$post->displayImage->filename}}" class="card-img-top">
+               @endif
                <div class="card-body">
                    <h2 class="card-title">{{$post->title}}</h2>
                    <small class="text-muted">

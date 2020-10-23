@@ -8,8 +8,8 @@
                 @foreach($posts as $post)
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            @if($post->image)
-                            <img src="{{$post->image->filename}}" class="card-img-top">
+                            @if($post->displayImage)
+                            <img src="{{$post->displayImage->filename}}" class="card-img-top">
                             @endif
                             <div class="card-body">
                                 <h3 class="card-title">{{$post->title}}</h3>

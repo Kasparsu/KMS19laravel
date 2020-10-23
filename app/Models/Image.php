@@ -10,6 +10,6 @@ class Image extends Model
     use HasFactory;
 
     public function post(){
-        return $this->hasOne(Post::class);
+        return $this->belongsTo(Post::class);
     }
 }

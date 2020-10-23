@@ -13,9 +13,9 @@ class ModifyPostsTable extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->foreignId('image_id')->nullable();
-        });
+//        Schema::table('posts', function (Blueprint $table) {
+//            $table->foreignId('image_id')->nullable();
+//        });
     }
 
     /**
@@ -25,8 +25,8 @@ class ModifyPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->dropForeign('image_id');
-        });
+//        Schema::table('posts', function (Blueprint $table) {
+//            $table->dropForeign('image_id');
+//        });
     }
 }
