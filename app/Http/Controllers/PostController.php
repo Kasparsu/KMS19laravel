@@ -47,15 +47,15 @@ class PostController extends Controller
         $post = new Post($validated);
         $post->user()->associate(Auth::user());
         $post->save();
-
         if(isset($validated['image'])) {
-            /** @var $uploaded UploadedFile */
-            $uploaded = $validated['image'];
-            $path = $uploaded->storePublicly('/public/uploads');
-            $image = new Image();
-            $image->filename = '/storage/' . str_replace('public/', '', $path);
-            $image->post()->associate($post);
-            $image->save();
+            foreach($validated['image'] as $image) {
+                /** @var $image UploadedFile */
+                $path = $image->storePublicly('/public/uploads');
+                $image = new Image();
+                $image->filename = '/storage/' . str_replace('public/', '', $path);
+                $image->post()->associate($post);
+                $image->save();
+            }
         }
         return redirect('/posts');
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 
 class ImageController extends Controller
 {
@@ -35,7 +36,16 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'file' => 'required|image|mimes:jpeg,bmp,png,jpg|max:2048'
+        ]);
+        $image = $validated['file'];
+        /** @var $image UploadedFile */
+        $path = $image->storePublicly('/public/uploads');
+        $image = new Image();
+        $image->filename = '/storage/' . str_replace('public/', '', $path);
+        $image->save();
+        return $image;
     }
 
     /**

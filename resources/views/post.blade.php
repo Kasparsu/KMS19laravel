@@ -4,8 +4,32 @@
     <div class="album py-5 bg-light">
        <div class="container">
            <div class="card">
-               @if($post->displayImage)
-                   <img src="{{$post->displayImage->filename}}" class="card-img-top">
+               @if($post->images->count())
+                   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                       <ol class="carousel-indicators">
+                           @foreach($post->images as $key=>$image)
+                            <li
+                                data-target="#carouselExampleIndicators"
+                                data-slide-to="{{$key}}"
+                                class="{{ $key==0 ? 'active' : '' }}"></li>
+                           @endforeach
+                       </ol>
+                       <div class="carousel-inner">
+                           @foreach($post->images as $key=>$image)
+                               <div class="carousel-item {{ $key==0 ? 'active' : '' }}">
+                                   <img src="{{$image->filename}}" class="d-block w-100">
+                               </div>
+                           @endforeach
+                       </div>
+                       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Previous</span>
+                       </a>
+                       <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Next</span>
+                       </a>
+                   </div>
                @endif
                <div class="card-body">
                    <h2 class="card-title">{{$post->title}}</h2>

@@ -9,7 +9,7 @@
     <title>@yield('title')</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
-
+    @yield('styles')
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
@@ -31,6 +31,7 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="/css/album.css" rel="stylesheet">
+
 </head>
 <body>
 @include('nav')
